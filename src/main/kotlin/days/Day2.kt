@@ -63,9 +63,10 @@ private data class SubState(val forward: Int = 0, val depth: Int = 0, val aim: I
 
 object Day2OL : Day {
     override fun solve1(s: String): String = s.trim().lineSequence().map {
-            val (a, b) = it.split(" ")
-            Command(a, b.toInt())
-        }.fold(SubState()) { state, cmd ->
+            it.split(" ")
+        }.map {
+            Command(it[0], it[1].toInt())
+    }.fold(SubState()) { state, cmd ->
         when(cmd.name) {
             "forward" -> {
                 SubState(state.forward + cmd.value, state.depth, state.aim)

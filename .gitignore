@@ -145,3 +145,6 @@ gradle-app.setting
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,gradle,kotlin
+
+# Ignore secret file from now on to not give away my cookie
+src/main/kotlin/Config.kt
