@@ -2,7 +2,12 @@
 These are my kotlin solutions for however long I manage to take part without giving up.
 
 ## How to run
-Change session key in `Config.kt` to your cookie.
+Add a Config.kt file locally and put in the following:
+```kt
+object Config {
+    val session: String = "?????"
+}
+```
 
 ## Reeee, be gentle on the server
 I am caching all files fetched. If you open it in a browser or in a single GET request programatically does not matter.
