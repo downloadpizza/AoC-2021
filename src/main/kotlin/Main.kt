@@ -1,9 +1,6 @@
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.result.Result
-import days.Day1
-import days.Day2
-import days.Day2OL
-import days.Day3
+import days.*
 import java.io.File
 
 val days = mapOf(
@@ -13,7 +10,7 @@ val days = mapOf(
 )
 
 fun main() {
-    val day = 2
+    val day = 3
 
     val input = cachedInput(day).trim()
 
