@@ -24,3 +24,5 @@ fun <T : Comparable<T>> List<List<T>>.matrixMax(): T = this.mapNotNull { it.maxO
  * Returns the lowest element of a Matrix or throws if no elements exist
  */
 fun <T : Comparable<T>> List<List<T>>.matrixMin(): T = this.mapNotNull { it.minOrNull() }.minOrNull()!!
+
+infix fun Int.anyRange(end: Int) = if(this < end) this..end else this.downTo(end)
