@@ -28,7 +28,7 @@ object Day7OL : Day {
     override fun solve1(s: String): String = s.trim().split(",")
         .map(String::toInt)
         .run {
-            this.minOf { dst ->
+            (this.minOrNull()!!..this.maxOrNull()!!).minOf { dst ->
                 this.sumOf { crab ->
                     (crab - dst).absoluteValue
                 }
@@ -38,7 +38,7 @@ object Day7OL : Day {
     override fun solve2(s: String): String = s.trim().split(",")
         .map(String::toInt)
         .run {
-            this.minOf { dst ->
+            (this.minOrNull()!!..this.maxOrNull()!!).minOf { dst ->
                 this.sumOf { crab ->
                     (1..(crab - dst).absoluteValue).sum()
                 }
