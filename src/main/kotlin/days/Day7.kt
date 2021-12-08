@@ -6,6 +6,8 @@ import kotlin.math.absoluteValue
 object Day7 : Day {
     override fun solve1(s: String): String {
         val crabs = s.trim().split(",").map(String::toInt)
+        val avg = crabs.sorted()[crabs.size/2]
+        println(crabs.sumOf { (it - avg).absoluteValue })
         return (crabs.minOrNull()!!..crabs.maxOrNull()!!).minOf { dst ->
             crabs.sumOf { crab ->
                 (crab - dst).absoluteValue
@@ -25,15 +27,15 @@ object Day7 : Day {
 }
 
 object Day7OL : Day {
-    override fun solve1(s: String): String = s.trim().split(",")
-        .map(String::toInt)
-        .run {
-            (this.minOrNull()!!..this.maxOrNull()!!).minOf { dst ->
-                this.sumOf { crab ->
-                    (crab - dst).absoluteValue
-                }
+override fun solve1(s: String): String = s.trim().split(",")
+    .map(String::toInt)
+    .run {
+        (this.minOrNull()!!..this.maxOrNull()!!).minOf { dst ->
+            this.sumOf { crab ->
+                (crab - dst).absoluteValue
             }
-        }.toString()
+        }
+    }.toString()
 
     override fun solve2(s: String): String = s.trim().split(",")
         .map(String::toInt)

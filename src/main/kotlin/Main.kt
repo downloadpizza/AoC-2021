@@ -10,11 +10,12 @@ val days = mapOf(
     4 to Day4,
     5 to Day5,
     6 to Day6OL,
-    7 to Day7OL
+    7 to Day7,
+    8 to Day8
 )
 
 fun main() {
-    val day = 7
+    val day = 8
 
     val input = cachedInput(day).trim()
 
